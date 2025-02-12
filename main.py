@@ -1,12 +1,8 @@
-from http.client import responses
 from pkg.plugin.context import register, handler, llm_func, BasePlugin, APIHost, EventContext
 from pkg.plugin.events import *  # 导入事件类
 import re
 import requests
-import json
 from datetime import datetime
-
-from test import params
 
 api_token = "jilspxxvi6mglxeyubxztg73lnqnkt"
 # GET 请求微博热点数据
