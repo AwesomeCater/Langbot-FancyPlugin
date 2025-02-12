@@ -35,7 +35,7 @@ class MyPlugin(BasePlugin):
             numbers = re.findall(r"\d+", msg)
             number = 10
             if numbers:  # 如果有数字且小于50才获取
-                number = int(numbers[0]) if int(numbers[0]) >= 50 else 10
+                number = int(numbers[0]) if int(numbers[0]) <= 50 else 10
             # 从api获取数据
             params = {
                 'token': api_token,
