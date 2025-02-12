@@ -86,7 +86,7 @@ def format_weibo_hotwords(hot_words_data):
         hot_num_emoji = "🤗"  # 热度的表情符号
         url_emoji = "🌐"  # URL的表情符号
         # 格式化输出
-        output += f"{index}. 热点词: {hot_word} {hot_word_emoji}\n   {hot_num_emoji}热度: {hot_word_num}\n   {url_emoji} URL: {url}\n\n"
+        output += f"{index}. {hot_word_emoji}热点词: {hot_word}\n   {hot_num_emoji}热度: {hot_word_num}\n   {url_emoji} URL: {url}\n\n"
 
     return output
 
@@ -131,7 +131,7 @@ class MyPlugin(BasePlugin):
                 params = {'token': api_token, 'city': city, 'ip': ""}
                 response_data = fetch_data_from_api(weather_url, params)
                 output = format_weather_info(response_data)
-                self.ap.logger.debug(output)
+                self.ap.logger.info(output)
                 ctx.add_return("reply", output)
                 ctx.prevent_default()
 
